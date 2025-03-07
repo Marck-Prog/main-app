@@ -10,7 +10,5 @@ backend/node_modules/
 frontend/.env
 backend/.env
 
-# Windows system files
-Thumbs.db
-Desktop.ini
+
 

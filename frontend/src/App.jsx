@@ -12,7 +12,7 @@ import OrderConfirmationPage from "./pages/OrderConfirmation";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import MyOrder from "./pages/MyOrder";
 import AdminLayout from "./components/Admin/AdminLayout";
-import AdminHomepage from "./pages/AdminHomepage";
+import AdminHomePage from "./pages/AdminHomePage";
 import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import EditProductPage from "./components/Admin/EditProductPage";
@@ -56,7 +56,7 @@ const App = () => {
               </ProtectedRoute>
             }
           >
-            <Route index element={<AdminHomepage />} />
+            <Route index element={<AdminHomePage />} />
             <Route path="users" element={<UserManagement />} />
             <Route path="products" element={<ProductManagement />} />
             <Route path="products/:id/edit" element={<EditProductPage />} />

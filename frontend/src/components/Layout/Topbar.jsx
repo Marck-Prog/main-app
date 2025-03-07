@@ -18,14 +18,14 @@ const Topbar = () => {
           </a>
         </div>
         <div className="text-sm text-center flex-grow">
-          <span>
-            🟣 Worldwide shipping! 🌏{" "}
-            <span className="hidden md:block">
+          <p>
+            🟣 Worldwide shipping! 🌏
+            <span className="hidden sm:inline">
               60-day free returns Pay later with Afterpay or Klarna 🟣 💸
               Made-to-order
             </span>
             sustainably 🟣
-          </span>
+          </p>
         </div>
         <div className="text-sm hidden md:block">
           <a href="tel:123456789" className="hover:text-gray-300">
