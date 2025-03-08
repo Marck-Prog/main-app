@@ -1,7 +1,59 @@
 @import "tailwindcss";
+@import "styles.css";
+@config "../tailwind.config.js";
 
 #root {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+.logo {
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.common-title {
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+@layer components {
+  .app-x-padding {
+    @apply px-4 sm:px-8 md:px-12;
+  }
+  .app-max-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .app-width-full {
+    @apply max-w-full mx-auto;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    .bottom-10-per {
+      bottom: 10%;
+    }
+    .left-10-per {
+      left: 10%;
+    }
+    .right-10-per {
+      right: 10%;
+    }
+  }
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-gray500;
+  right: 0;
+  border-color: #282828;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-gray500;
+  background-color: #282828;
 }
