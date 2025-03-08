@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineUser, HiBars3BottomRight } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -6,16 +6,43 @@ import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
+import AppHeader from "./AppHeader";
+import TopNav from "./TopNav";
+import WhistlistIcon from "../../assets/icons/WhistlistIcon";
+import Menu from "../../pages/Menu";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.auth);
-
+  const [scrolled, setScrolled] = useState(false);
+  const [didMount, setDidMount] = useState(false);
   const cartItemCount =
     cart?.products?.reduce((total, product) => total + product.quantity, 0) ||
     0;
+
+  const handleScroll = useCallback(() => {
+    const offset = window.scrollY;
+    if (offset > 30) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  }, [setScrolled]);
+
+  useEffect(() => {
+    setDidMount(true);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      setDidMount(false);
+    };
+  }, [handleScroll]);
+
+  if (!didMount) {
+    return null;
+  }
 
   const toggleNavDrawer = () => {
     setNavDrawerOpen(!navDrawerOpen);
@@ -27,127 +54,116 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* Left - Logo */}
-        <div>
-          <Link to="/" className="text-2xl font-medium">
-            Panda
-          </Link>
-        </div>
-        {/* Center - Navigation Links */}
-        <div className="hidden md:flex space-x-6">
-          <Link
-            to="/collections/all?gender=Men"
-            className="text-sm text-gray-700 hover:text-black font-medium uppercase"
-          >
-            Men
-          </Link>
-          <Link
-            to="/collections/all?gender=Women"
-            className="text-sm text-gray-700 hover:text-black font-medium uppercase"
-          >
-            Women
-          </Link>
-          <Link
-            to="/collections/all?category=Top Wear"
-            className="text-sm text-gray-700 hover:text-black font-medium uppercase"
-          >
-            Top Wear
-          </Link>
-          <Link
-            to="/collections/all?category=Bottom Wear"
-            className="text-sm text-gray-700 hover:text-black font-medium uppercase"
-          >
-            Bottom Wear
-          </Link>
-          <Link
-            to="/collections/all?gender=Women"
-            className="text-sm text-gray-700 hover:text-black font-medium uppercase"
-          >
-            Threads
-          </Link>
-        </div>
-        {/* Right - Icons */}
-        <div className="flex items-center space-x-4">
-          {user && user.role === "admin" && (
-            <Link
-              to="/admin"
-              className="block bg-slate-700 px-4 py-2 text-sm text-white"
-            >
-              Admin
-            </Link>
-          )}
-          <Link to="/profile" className="hover:text-black">
-            <HiOutlineUser className="h-6 w-6 text-gray-700" />
-          </Link>
-
-          <button
-            onClick={toggleCartDrawer}
-            className="relative hover:text-black"
-          >
-            <HiOutlineShoppingBag className="h-6 w-6 text-gray-700" />
-            {cartItemCount > 0 && (
-              <span className="absolute -top-2.5 bg-slate-800 text-white text-xs rounded-full px-2 py-1">
-                {cartItemCount}
-              </span>
-            )}
-          </button>
-
-          {/* Search */}
-          <div className="overflow-hidden">
-            <SearchBar />
-          </div>
-
-          <button onClick={toggleNavDrawer} className="md:hidden">
-            <HiBars3BottomRight className="h-6 w-6 text-gray-700" />
-          </button>
-        </div>
-      </nav>
-      <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} />
-
-      {/* Mobile Navigation */}
-      <div
-        className={`fixed top-0 left-0 w-3/4 sm:w-1/2 md:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${
-          navDrawerOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+      <AppHeader />
+      <a
+        href="#"
+        className="whitespace-nowrap absolute z-50 left-4 opacity-90 rounded-md bg-white px-4 py-3 transform -translate-y-40 focus:translate-y-0 transition-all duration-300"
       >
-        <div className="flex justify-end p-4">
-          <button onClick={toggleNavDrawer}>
-            <IoMdClose className="h-6 w-6 text-gray-600" />
-          </button>
-        </div>
-        <div className="p-4">
-          <h2 className="text-xl font-semibold mb-4">Menu</h2>
-          <nav className="space-y-4">
-            <Link
-              to="/collections/all?gender=Men"
-              onClick={toggleNavDrawer}
-              className="block text-gray-600 hover:text-black"
-            >
-              Men
-            </Link>
-            <Link
-              to="/collections/all?gender=Women"
-              onClick={toggleNavDrawer}
-              className="block text-gray-600 hover:text-black"
-            >
-              WoMen
-            </Link>
-            <Link
-              to="/collections/all?category=Top Wear"
-              onClick={toggleNavDrawer}
-              className="block text-gray-600 hover:text-black"
-            >
-              Top Wear
-            </Link>
-            <Link
-              to="/collections/all?category=Bottom Wear"
-              onClick={toggleNavDrawer}
-              className="block text-gray-600 hover:text-black"
-            >
-              Bottom Wear
-            </Link>
-          </nav>
+        Skip to main content
+      </a>
+      {!scrolled && <TopNav />}
+
+      <div>
+        <div
+          className={`${
+            scrolled
+              ? "bg-white sticky top-0 shadow-md mb-10 z-50 max-sm:h-16"
+              : "bg-transparent"
+          } w-full z-50 h-20 relative`}
+        >
+          <div className="app-max-width w-full z-50">
+            <div className="flex justify-between px-14 max-sm:px-4">
+              <nav className="container mx-auto flex items-center justify-between">
+                {/* Hamburger Menu and Mobile Nav */}
+                <div className="flex-1 lg:flex-0 lg:hidden">
+                  <Menu />
+                </div>
+
+                {/* Left Nav */}
+                <ul className="flex-0 lg:flex-1 flex ml-8 my-6 cursor-pointer">
+                  {/* Center - Navigation Links */}
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
+                    <Link to="/collections/all?gender=Men">Men</Link>
+                  </li>
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
+                    <Link to="/collections/all?gender=Women">Women</Link>
+                  </li>
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
+                    <Link to="/collections/all?category=Top Wear">
+                      Accessories
+                    </Link>
+                  </li>
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
+                    <Link to="/collections/all?category=Bottom Wear">
+                      Threads
+                    </Link>
+                  </li>
+                </ul>
+
+                {/* Juan Logo */}
+                <div className="flex-auto flex justify-center items-center hidden sm:flex">
+                  <div className="w-86 h-auto">
+                    <div>
+                      <Link to="/">
+                        <img
+                          className="justify-center cursor-pointer "
+                          src="/logo.svg"
+                          alt="Picture of the author"
+                          width={250}
+                          height={80}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Nav */}
+                <div className="flex lg:gap-10 items-center">
+                  {/* Search */}
+                  <div className="mr-4 max-sm:mt-2">
+                    <SearchBar />
+                  </div>
+
+                  {user && user.role === "admin" && (
+                    <Link
+                      to="/admin"
+                      className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white font-semibold"
+                    >
+                      ADMIN
+                    </Link>
+                  )}
+                  <Link to="/profile" className="hover:text-black">
+                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray-700 hidden sm:block" />
+                  </Link>
+
+                  <button
+                    type="button"
+                    className="relative cursor-pointer hidden sm:block"
+                    aria-label="Wishlist"
+                    onClick={() => navigate("/wishlist")}
+                  >
+                    <WhistlistIcon className="" />
+                  </button>
+
+                  <button
+                    onClick={toggleCartDrawer}
+                    className="relative hover:text-black max-sm:mt-2"
+                  >
+                    <HiOutlineShoppingBag className="h-6 w-6 text-gray500 cursor-pointer" />
+                    {cartItemCount > 0 && (
+                      <span className="absolute -top-2.5 bg-gray500 cursor-pointer text-white text-xs rounded-full px-[9px] py-1">
+                        {cartItemCount}
+                      </span>
+                    )}
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <CartDrawer
+            drawerOpen={drawerOpen}
+            toggleCartDrawer={toggleCartDrawer}
+          />
         </div>
       </div>
     </>

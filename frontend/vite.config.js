@@ -5,6 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "dist", // Ensure the output folder is correct
+    outDir: "dist",
+  },
+  css: {
+    modules: {
+      localsConvention: "camelCase",
+    },
   },
 });
