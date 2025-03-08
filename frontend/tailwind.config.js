@@ -4,7 +4,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@mui/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     screens: {
       sm: "576px",
@@ -49,8 +49,14 @@ module.exports = {
       green: "#9BDEAC",
       blue: "#66BFBF",
       lightgreen: "#F2FDFB",
+      bgColor: "#282828",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "gradient-to-br": "linear-gradient(to bottom right, #22c55e, #2563eb)",
+        "gradient-to-bl": "linear-gradient(to bottom left, #22c55e, #2563eb)",
+      },
+    },
   },
   variants: {
     extend: {
@@ -60,6 +66,7 @@ module.exports = {
       letterSpacing: ["group-hover"],
       width: ["group-hover"],
       borderColor: ["group-hover"],
+      backgroundImage: ["hover"],
     },
     // divideColor: ['group-hover'],
   },
