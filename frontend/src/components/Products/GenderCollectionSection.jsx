@@ -1,52 +1,65 @@
+import OverlayContainer from "./OverlayContainer";
 import { Link } from "react-router-dom";
-import mensCollectionImage from "../../assets/mens-collection.webp";
-import womensCollectionImage from "../../assets/womens-collection.webp";
+import { useEffect, useState } from "react";
 
 const GenderCollectionSection = () => {
-  return (
-    <section className="py-16 px-4 lg:px-0">
-      <div className="container mx-auto flex flex-col md:flex-row gap-8">
-        {/* Women's Collection */}
-        <div className="relative flex-1">
-          <img
-            src={womensCollectionImage}
-            alt="Women's Collection"
-            className="w-full h-[700px] object-cover"
-          />
-          <div className="absolute bottom-8 left-8 bg-white bg-opacity-90 p-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Women's Collection
-            </h2>
-            <Link
-              to="/collections/all?gender=Women"
-              className="text-gray-900 underline"
-            >
-              Shop Now
-            </Link>
-          </div>
-        </div>
+  const [translations, setTranslations] = useState({});
 
-        {/* Men's Collection */}
-        <div className="relative flex-1">
-          <img
-            src={mensCollectionImage}
-            alt="Men's Collection"
-            className="w-full h-[700px] object-cover"
-          />
-          <div className="absolute bottom-8 left-8 bg-white bg-opacity-90 p-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Women's Collection
-            </h2>
-            <Link
-              to="/collections/all?gender=Men"
-              className="text-gray-900 underline"
+  useEffect(() => {
+    setTranslations({
+      new_arrivals: "Threads Collection",
+      women_collection: "Women Collection",
+      men_collection: "Men Collection",
+    });
+  }, []);
+
+  return (
+    <main className="app-max-width -mt-20 px">
+      <section className="w-full h-auto py-10">
+        <div className="px-4 max-sm:px-0 h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="w-full sm:col-span-2 lg:col-span-2">
+            <OverlayContainer
+              imgSrc="/bg-img/banner_minipage1.jpg"
+              imgSrc2="/bg-img/banner_minipage1-tablet.jpg"
+              imgAlt="Threads Collection"
             >
-              Shop Now
-            </Link>
+              <Link
+                to="/collections/all?category=Top Wear"
+                className="absolute bottom-7.5 sm:right-11 max-sm:bottom-9 z-20 bg-white text-black px-6 py-2 mr-4.5 hover:bg-gray500 hover:text-white duration-300"
+              >
+                {translations.new_arrivals}
+              </Link>
+            </OverlayContainer>
+          </div>
+          <div className="w-full">
+            <OverlayContainer
+              imgSrc="/bg-img/banner_minipage2.jpg"
+              imgAlt="Women Collection"
+            >
+              <Link
+                to="/collections/all?gender=Women"
+                className="absolute bottom-7.5 z-20 bg-white text-black px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
+              >
+                {translations.women_collection}
+              </Link>
+            </OverlayContainer>
+          </div>
+          <div className="w-full">
+            <OverlayContainer
+              imgSrc="/bg-img/banner_minipage3.jpg"
+              imgAlt="Men Collection"
+            >
+              <Link
+                to="/collections/all?gender=Men"
+                className="absolute bottom-7.5 z-20 bg-white text-black px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
+              >
+                {translations.men_collection}
+              </Link>
+            </OverlayContainer>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

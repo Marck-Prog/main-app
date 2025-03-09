@@ -12,7 +12,7 @@
   --font-display: "Roboto Condensed", serif;
   --font-weight-display: 700;
   --font-color: #babfc5;
-  --color-primary: #ffff;
+  /* --color-primary: #ffff; */
 }
 
 .logo {
@@ -53,14 +53,4 @@
       right: 10%;
     }
   }
-}
-
-.toggle-checkbox:checked {
-  @apply: right-0 border-gray500;
-  right: 0;
-  border-color: #282828;
-}
-.toggle-checkbox:checked + .toggle-label {
-  @apply: bg-gray500;
-  background-color: #282828;
 }

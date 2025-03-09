@@ -30,7 +30,7 @@ const sliders = [
   {
     id: 1,
     image: "/bg-img/curly_hair_white-1.png",
-    imageTablet: "/bg-img/curly_hair_white-1-tablet.png",
+    imageTablet: "/bg-img/curly_hair_white-1-tablet.jpg",
     imageMobile: "/bg-img/curly_hair_white-1_mobile.jpg",
     subtitle: "Spring Revolution",
     titleUp: "Night Summer",

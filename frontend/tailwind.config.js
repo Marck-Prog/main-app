@@ -4,7 +4,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@mui/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false,
   theme: {
     screens: {
       sm: "576px",
@@ -49,7 +48,7 @@ module.exports = {
       green: "#9BDEAC",
       blue: "#66BFBF",
       lightgreen: "#F2FDFB",
-      bgColor: "#282828",
+      // bgColor: "#282828",
     },
     extend: {
       backgroundImage: {
