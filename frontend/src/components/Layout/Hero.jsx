@@ -3,6 +3,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 import TextButton from "../../pages/TextButton";
 
@@ -13,9 +14,10 @@ const sliders = [
     imageTablet: "/bg-img/monigote-tablet.jpg",
     imageMobile: "/bg-img/monigote_mobile.jpg",
     subtitle: "Spring promo",
-    titleUp: "The Weekend",
-    titleDown: "Promotions",
+    titleUp: "Hot Picks",
+    titleDown: "Blowout Fever",
     rightText: false,
+    link: "/collections/all?gender=Women",
   },
   {
     id: 2,
@@ -23,9 +25,10 @@ const sliders = [
     imageTablet: "/bg-img/curly_hair_girl-1-tablet.jpg",
     imageMobile: "/bg-img/curly_hair_girl-1_mobile.jpg",
     subtitle: "50% off",
-    titleUp: "New Cocktail",
+    titleUp: "Artistry Motion",
     titleDown: "Outfits",
     rightText: false,
+    link: "/collections/all?gender=Men",
   },
   {
     id: 1,
@@ -33,9 +36,10 @@ const sliders = [
     imageTablet: "/bg-img/curly_hair_white-1-tablet.jpg",
     imageMobile: "/bg-img/curly_hair_white-1_mobile.jpg",
     subtitle: "Spring Revolution",
-    titleUp: "Night Summer",
-    titleDown: "Printed Tees",
+    titleUp: "Summer Tees",
+    titleDown: "Drip Collection",
     rightText: true,
+    link: "/collections/all?category=Top Wear",
   },
 ];
 
@@ -84,7 +88,9 @@ const Hero = () => {
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl my-4 [text-shadow:2px_2px_4px_rgba(255,255,255,0.9)]">
                 {slider.titleDown}
               </span>
-              <TextButton value="Shop Now" />
+              <Link to={slider.link}>
+                <TextButton value="Shop Now" />
+              </Link>
             </div>
           </SwiperSlide>
         ))}

@@ -94,7 +94,9 @@ const ProductDetails = ({ productId }) => {
                   src={image.url}
                   alt={image.altText || `Thumbnail ${index}`}
                   className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
-                    mainImage === image.url ? "border-black" : "border-gray-300"
+                    mainImage === image.url
+                      ? "border-gray400"
+                      : "border-gray300"
                   }`}
                 />
               ))}
@@ -170,8 +172,8 @@ const ProductDetails = ({ productId }) => {
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-4 py-2 rounded border cursor-pointer ${
-                        selectedSize === size ? "bg-black text-white" : ""
+                      className={`px-4 py-2 rounded border cursor-pointer hover:bg-gray400 hover:text-white ${
+                        selectedSize === size ? "!bg-gray500 text-white" : ""
                       }`}
                     >
                       {size}
@@ -185,14 +187,14 @@ const ProductDetails = ({ productId }) => {
                 <div className="flex items-center space-x-4 mt-2">
                   <button
                     onClick={() => handleQuantityChange("minus")}
-                    className="px-2 py-1 bg-gray-200 rounded text-lg"
+                    className="px-3 py-1 bg-gray200 rounded hover:bg-gray500 hover:text-white text-lg cursor-pointer"
                   >
                     -
                   </button>
                   <span className="text-lg">{quantity}</span>
                   <button
                     onClick={() => handleQuantityChange("plus")}
-                    className="px-2 py-1 bg-gray-200 rounded text-lg"
+                    className="px-2.5 py-1 bg-gray200 rounded hover:bg-gray500 hover:text-white text-lg cursor-pointer"
                   >
                     +
                   </button>
@@ -202,10 +204,10 @@ const ProductDetails = ({ productId }) => {
               <button
                 onClick={handleAddToCart}
                 disabled={isButtonDisabled}
-                className={`bg-black text-white py-2 px-6 rounded w-full mb-4 ${
+                className={`bg-gray900 text-white rounded-sm py-2 px-6 w-full mb-4 cursor-pointer ${
                   isButtonDisabled
                     ? "cursor-not-allowed opacity-50"
-                    : "hover:bg-gray-900"
+                    : "hover:bg-gray500"
                 }`}
               >
                 {isButtonDisabled ? "Adding item to cart..." : "ADD TO CART"}

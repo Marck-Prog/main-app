@@ -94,20 +94,20 @@ const NewArrivals = () => {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`p-2 rounded border ${
+            className={`p-2 rounded border border-gray300 ${
               canScrollLeft
-                ? "bg-white text-black cursor-pointer"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                ? "bg-white text-gray500 cursor-pointer"
+                : "bg-gray200 text-gray300 cursor-not-allowed"
             } `}
           >
             <FiChevronLeft className="text-2xl " />
           </button>
           <button
             onClick={() => scroll("right")}
-            className={`p-2 rounded border ${
+            className={`p-2 rounded border border-gray300 ${
               canScrollRight
-                ? "bg-white text-black cursor-pointer"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                ? "bg-white text-gray500 cursor-pointer"
+                : "bg-gray200 text-gray300 cursor-not-allowed"
             } `}
           >
             <FiChevronRight className="text-2xl " />
