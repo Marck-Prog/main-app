@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="app-max-width border-t border-gray300 py-12 ml-30">
+    <footer className="app-max-width border-t border-gray300 py-12 ml-30 max-sm:ml-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         <div>
           <h3 className="text-lg text-gray-800 mb-4">Newsletter</h3>
