@@ -1,15 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { HiOutlineUser, HiBars3BottomRight } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import SearchBar from "./SearchBar";
-import CartDrawer from "../Layout/CartDrawer";
-import { IoMdClose } from "react-icons/io";
+import { HiOutlineUser } from "react-icons/hi2";
 import { useSelector } from "react-redux";
-import AppHeader from "./AppHeader";
-import TopNav from "./TopNav";
+import { Link } from "react-router-dom";
 import WhistlistIcon from "../../assets/icons/WhistlistIcon";
 import Menu from "../../pages/Menu";
+import CartDrawer from "../Layout/CartDrawer";
+import AppHeader from "./AppHeader";
+import SearchBar from "./SearchBar";
+import TopNav from "./TopNav";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);

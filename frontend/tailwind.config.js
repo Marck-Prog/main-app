@@ -49,7 +49,6 @@ module.exports = {
       green: "#9BDEAC",
       blue: "#66BFBF",
       lightgreen: "#F2FDFB",
-      // bgColor: "#282828",
     },
     extend: {
       backgroundImage: {
