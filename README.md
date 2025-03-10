@@ -4,9 +4,9 @@ This repository contains the codebase for the Juan Graphico Ecommerce website.
 
 ## Description
 
-Juan Graphico Ecommerce is a platform designed for [**Insert a brief description of what Juan Graphico sells. Examples: custom graphic designs, printed merchandise, digital art, etc.**]. It aims to provide users with a seamless and enjoyable online shopping experience.
+Juan Graphico Ecommerce is a platform designed for selling custom graphic designs, printed merchandise, and digital art TShirts. It aims to provide users with a seamless and enjoyable online shopping experience by offering a wide range of unique and high-quality products tailored to various creative needs.
 
-[**Optionally, add a sentence or two about the key features of the site. For example: "Key features include a personalized product browsing experience, secure payment integration, and a user-friendly interface."**]
+Key features include a personalized product browsing experience, secure payment integration, and a user-friendly interface, ensuring a smooth and hassle-free shopping journey for every customer. Additionally, the platform supports custom orders, limited-edition collections, and responsive customer service, making it the go-to destination for art and design enthusiasts.
 
 ## Technologies Used
 
