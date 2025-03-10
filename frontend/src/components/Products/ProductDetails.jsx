@@ -121,7 +121,9 @@ const ProductDetails = ({ productId }) => {
                   alt={image.altText || `Thumbnail ${index}`}
                   onClick={() => setMainImage(image.url)}
                   className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${
-                    mainImage === image.url ? "border-black" : "border-gray-300"
+                    mainImage === image.url
+                      ? "border-gray900"
+                      : "border-gray300"
                   }`}
                 />
               ))}
@@ -136,7 +138,7 @@ const ProductDetails = ({ productId }) => {
                 {selectedProduct.originalPrice &&
                   `$${selectedProduct.originalPrice}`}
               </p>
-              <p className="text-xl text-gray-500 mb-2">
+              <p className="text-xl text-gray500 mb-2">
                 ${selectedProduct.price}
               </p>
 
@@ -145,7 +147,7 @@ const ProductDetails = ({ productId }) => {
               </p>
 
               <div className="mb-4">
-                <p className="text-gray-700">Color:</p>
+                <p className="text-gray500">Color:</p>
                 <div className="flex gap-2 mt-2">
                   {selectedProduct.colors.map((color) => (
                     <button
@@ -153,8 +155,8 @@ const ProductDetails = ({ productId }) => {
                       onClick={() => setSelectedColor(color)}
                       className={`w-8 h-8 rounded-full border cursor-pointer ${
                         selectedColor === color
-                          ? "border-4 border-black"
-                          : "border-gray-300"
+                          ? "border-4 border-gray900"
+                          : "border-gray300"
                       }`}
                       style={{
                         backgroundColor: color.toLowerCase(),
@@ -166,7 +168,7 @@ const ProductDetails = ({ productId }) => {
               </div>
 
               <div className="mb-4">
-                <p className="text-gray-700">Size:</p>
+                <p className="text-gray500">Size:</p>
                 <div className="flex gap-2 mt-2">
                   {selectedProduct.sizes.map((size) => (
                     <button
@@ -183,7 +185,7 @@ const ProductDetails = ({ productId }) => {
               </div>
 
               <div className="mb-6">
-                <p className="text-gray-700">Quantity:</p>
+                <p className="text-gray500">Quantity:</p>
                 <div className="flex items-center space-x-4 mt-2">
                   <button
                     onClick={() => handleQuantityChange("minus")}
@@ -213,7 +215,7 @@ const ProductDetails = ({ productId }) => {
                 {isButtonDisabled ? "Adding item to cart..." : "ADD TO CART"}
               </button>
 
-              <div className="mt-10 text-gray-700">
+              <div className="mt-10 text-gray500">
                 <h3 className="text-xl font-bold mb-4">Characteristics:</h3>
                 <table className="w-full text-left text-sm text-gray-600">
                   <tbody>

@@ -131,8 +131,8 @@ const Navbar = () => {
                       ADMIN
                     </Link>
                   )}
-                  <Link to="/profile" className="hover:text-black">
-                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray-700 hidden sm:block" />
+                  <Link to="/profile" className="hover:text-gray900">
+                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray500 hidden sm:block" />
                   </Link>
 
                   <button
@@ -146,7 +146,7 @@ const Navbar = () => {
 
                   <button
                     onClick={toggleCartDrawer}
-                    className="relative hover:text-black max-sm:mt-2"
+                    className="relative hover:text-gray900 max-sm:mt-2"
                   >
                     <HiOutlineShoppingBag className="h-6 w-6 text-gray500 cursor-pointer" />
                     {cartItemCount > 0 && (

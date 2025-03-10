@@ -97,7 +97,7 @@ const Checkout = () => {
         <form onSubmit={handleCreateCheckout}>
           <h3 className="text-lg mb-4">Contact Details</h3>
           <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-gray500">Email</label>
             <input
               type="email"
               value={user ? user.email : ""}
@@ -108,7 +108,7 @@ const Checkout = () => {
           <h3 className="text-lg mb-4">Delivery</h3>
           <div className="mb-4 grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-700">First Name</label>
+              <label className="block text-gray500">First Name</label>
               <input
                 type="text"
                 value={shippingAddress.firstName}
@@ -124,7 +124,7 @@ const Checkout = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Last Name</label>
+              <label className="block text-gray500">Last Name</label>
               <input
                 type="text"
                 value={shippingAddress.lastName}
@@ -141,7 +141,7 @@ const Checkout = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700">Address</label>
+            <label className="block text-gray500">Address</label>
             <input
               type="text"
               value={shippingAddress.address}
@@ -158,7 +158,7 @@ const Checkout = () => {
 
           <div className="mb-4 grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-gray-700">City</label>
+              <label className="block text-gray500">City</label>
               <input
                 type="text"
                 value={shippingAddress.city}
@@ -174,7 +174,7 @@ const Checkout = () => {
             </div>
 
             <div>
-              <label className="block text-gray-700">Postal Code</label>
+              <label className="block text-gray500">Postal Code</label>
               <input
                 type="text"
                 value={shippingAddress.postalCode}
@@ -191,7 +191,7 @@ const Checkout = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700">Country</label>
+            <label className="block text-gray500">Country</label>
             <input
               type="text"
               value={shippingAddress.country}
@@ -206,7 +206,7 @@ const Checkout = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Phone</label>
+            <label className="block text-gray500">Phone</label>
             <input
               type="tel"
               value={shippingAddress.phone}
@@ -225,7 +225,7 @@ const Checkout = () => {
             {!checkoutId ? (
               <button
                 type="submit"
-                className="w-full bg-black text-white py-3 rounded cursor-pointer"
+                className="w-full bg-gray900 text-white py-3 rounded cursor-pointer"
               >
                 Continue to Payment
               </button>
@@ -260,8 +260,8 @@ const Checkout = () => {
                 />
                 <div>
                   <h3 className="text-md">{product.name}</h3>
-                  <p className="text-gray-500">Size: {product.size}</p>
-                  <p className="text-gray-500">Color: {product.color}</p>
+                  <p className="text-gray500">Size: {product.size}</p>
+                  <p className="text-gray500">Color: {product.color}</p>
                 </div>
               </div>
               <p className="text-xl">${product.price?.toLocaleString()}</p>

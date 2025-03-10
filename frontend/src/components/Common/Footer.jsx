@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
         <div>
           <h3 className="text-lg text-gray-800 mb-4">Newsletter</h3>
-          <p className="text-gray-500 mb-4">
+          <p className="text-gray500 mb-4">
             Be the first to hear about new products, exclusive events, and
             online offers.
           </p>
@@ -23,7 +23,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-3 w-full text-sm border-t border-l border-b border-gray300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all"
+              className="p-3 w-full text-sm border-t border-l border-b border-gray300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-gray500 transition-all"
               required
             />
             <button
@@ -40,22 +40,22 @@ const Footer = () => {
           <h3 className="text-lg text-gray-800 mb-4">Shop</h3>
           <ul className="space-y-2 text-gray-600">
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Men's Top Wear
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Women's Top Wear
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Men's Bottom Wear
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Women's Bottom Wear
               </Link>
             </li>
@@ -67,22 +67,22 @@ const Footer = () => {
           <h3 className="text-lg text-gray-800 mb-4">Shop</h3>
           <ul className="space-y-2 text-gray-600">
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 About Us
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 FAQs
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-500 transition-colors">
+              <Link to="#" className="hover:text-gray500 transition-colors">
                 Features
               </Link>
             </li>
@@ -97,7 +97,7 @@ const Footer = () => {
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-500"
+              className="hover:text-gray500"
             >
               <TbBrandMeta />
             </a>
@@ -105,7 +105,7 @@ const Footer = () => {
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-500"
+              className="hover:text-gray500"
             >
               <IoLogoInstagram />
             </a>
@@ -113,12 +113,12 @@ const Footer = () => {
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-500"
+              className="hover:text-gray500"
             >
               <RiTwitterXFill />
             </a>
           </div>
-          <p className="text-gray-500">Call Us</p>
+          <p className="text-gray500">Call Us</p>
           <p>
             <FiPhoneCall className="inline-block mr-2 my-2" />
             0123-456-789
@@ -128,7 +128,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="container mx-auto mt-12 px-4 lg:px-0 border-t border-gray300 pt-6">
-        <p className="text-gray-500 text-sm tracking-tighter text-center">
+        <p className="text-gray500 text-sm tracking-tighter text-center">
           All Rights Reserved. Juan Graphico &copy; {new Date().getFullYear()}
         </p>
       </div>

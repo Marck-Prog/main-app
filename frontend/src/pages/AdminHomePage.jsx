@@ -33,9 +33,9 @@ const AdminHomePage = () => {
       {productsLoading || ordersLoading ? (
         <p>Loading...</p>
       ) : productsError ? (
-        <p className="text-red-500">Error fetching products: {productsError}</p>
+        <p className="textred">Error fetching products: {productsError}</p>
       ) : ordersError ? (
-        <p className="text-red-500">Error fetching orders: {ordersError}</p>
+        <p className="textred">Error fetching orders: {ordersError}</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="p-4 shadow-md rounded-lg">
@@ -63,8 +63,8 @@ const AdminHomePage = () => {
       <div className="mt-6">
         <h2 className="text-2xl font-bold mb-4">Recent Orders</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-left text-gray-500 !bg-gray200 shadow-md rounded-lg">
-            <thead className="bg-gray-100 text-xs uppercase text-gray-700">
+          <table className="min-w-full text-left text-gray500 !bg-gray200 shadow-md rounded-lg">
+            <thead className="bg-gray100 text-xs uppercase text-gray500">
               <tr>
                 <th className="py-3 px-4">Order ID</th>
                 <th className="py-3 px-4">User</th>
@@ -88,7 +88,7 @@ const AdminHomePage = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={4} className="p-4 text-center text-gray-500">
+                  <td colSpan={4} className="p-4 text-center text-gray500">
                     No recent orders found
                   </td>
                 </tr>

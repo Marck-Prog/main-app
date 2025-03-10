@@ -30,8 +30,8 @@ const ProductManagement = () => {
     <div className="max-w-7xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6">Product Management</h2>
       <div className="overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="min-w-full text-left text-gray-500">
-          <thead className="bg-gray-100 text-xs uppercase text-gray-700">
+        <table className="min-w-full text-left text-gray500">
+          <thead className="bg-gray100 text-xs uppercase text-gray500">
             <tr>
               <th className="py-3 px-4">Name</th>
               <th className="py-3 px-4">Price</th>
@@ -60,7 +60,7 @@ const ProductManagement = () => {
                     </Link>
                     <button
                       onClick={() => handleDelete(product._id)}
-                      className="bg-red-500 cursor-pointer text-white px-2 py-1 rounded hover:bg-red-600"
+                      className="bgred cursor-pointer text-white px-2 py-1 rounded hover:bg-red"
                     >
                       Delete
                     </button>
@@ -69,7 +69,7 @@ const ProductManagement = () => {
               ))
             ) : (
               <tr>
-                <td colSpan={4} className="p-4 text-center text-gray-500">
+                <td colSpan={4} className="p-4 text-center text-gray500">
                   No products found
                 </td>
               </tr>

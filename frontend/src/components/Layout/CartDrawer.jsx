@@ -88,7 +88,7 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
               </button>
             </Link>
           )}
-          <p className="text-sm tracking-tighter text-gray-500 mt-2 text-center">
+          <p className="text-sm tracking-tighter text-gray500 mt-2 text-center">
             Shipping, taxes, and discount codes calculated at checkout.
           </p>
         </div>

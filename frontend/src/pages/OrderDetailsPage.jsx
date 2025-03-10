@@ -39,7 +39,7 @@ const OrderDetailsPage = () => {
                 className={`${
                   orderDetails.isPaid
                     ? "bg-green-100 text-green-700"
-                    : "bg-red-100 text-red-700"
+                    : "bg-red-100 text-red"
                 } px-3 py-1 rounded-full text-sm font-medium mb-2`}
               >
                 {orderDetails.isPaid ? "Approved" : "Pending"}
@@ -77,7 +77,7 @@ const OrderDetailsPage = () => {
           <div className="overflow-x-auto">
             <h4 className="text-lg font-semibold mb-4">Products</h4>
             <table className="min-w-full text-gray-600 mb-4">
-              <thead className="bg-gray-100">
+              <thead className="bg-gray100">
                 <tr>
                   <th className="py-2 px-4">Name</th>
                   <th className="py-2 px-4">Unit Price</th>

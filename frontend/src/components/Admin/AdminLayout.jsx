@@ -23,14 +23,14 @@ const AdminLayout = () => {
       {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 z-10 bg-black bg-opacity-80 md:hidden"
+          className="fixed inset-0 z-10 bg-gray900 bg-opacity-80 md:hidden"
           onClick={toggleSidebar}
         ></div>
       )}
 
       {/* sidebar */}
       <div
-        className={`bg-gray-900 w-64 min-h-screen text-white absolute transform transition-transform duration-300 md:translate-x-0 md:static md:block z-20 ${
+        className={`bg-gray500 w-64 min-h-screen text-white absolute transform transition-transform duration-300 md:translate-x-0 md:static md:block z-20 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

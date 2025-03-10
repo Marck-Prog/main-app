@@ -41,7 +41,7 @@ const CartContents = ({ cart, userId, guestId }) => {
             />
             <div className="midPart mx-4 flex-grow">
               <h3 className="break-words">{product.name}</h3>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray500">
                 size: {product.size} | color: {product.color}
               </p>
               <div className="flex items-center gap-4 mt-4">

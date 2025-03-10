@@ -43,7 +43,7 @@ const Menu = () => {
           onClick={openModal}
           className="focus:outline-none"
         >
-          <HiBars3BottomRight className="h-7 w-7 mb-1 text-gray-700 cursor-pointer" />
+          <HiBars3BottomRight className="h-7 w-7 mb-1 text-gray500 cursor-pointer" />
         </button>
         <div className="flex-grow text-center sm:text-left">
           <Link

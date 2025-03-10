@@ -28,13 +28,13 @@ const AdminSidebar = () => {
         </Link>
       </div>
       <h2 className="text-xl font-medium mb-6 text-center">Admin Dashboard</h2>
-      <nav className="flex flex-col space-y-2">
+      <nav className="flex flex-col space-y-2 ">
         <NavLink
           to="/admin/users"
           className={({ isActive }) =>
             isActive
-              ? "bg-gray-700 text-white py-3 px-4 rounded flex items-center space-x-2"
-              : "text-gray-300 hover:bg-gray-700 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
+              ? "bg-gray300 text-gray500 py-3 px-4 rounded flex items-center space-x-2"
+              : "text-gray300 hover:bg-gray500 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
           }
         >
           <FaUser />
@@ -44,8 +44,8 @@ const AdminSidebar = () => {
           to="/admin/products"
           className={({ isActive }) =>
             isActive
-              ? "bg-gray-700 text-white py-3 px-4 rounded flex items-center space-x-2"
-              : "text-gray-300 hover:bg-gray-700 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
+              ? "bg-gray300 text-gray500 py-3 px-4 rounded flex items-center space-x-2"
+              : "text-gray300 hover:bg-gray500 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
           }
         >
           <FaBoxOpen />
@@ -55,8 +55,8 @@ const AdminSidebar = () => {
           to="/admin/orders"
           className={({ isActive }) =>
             isActive
-              ? "bg-gray-700 text-white py-3 px-4 rounded flex items-center space-x-2"
-              : "text-gray-300 hover:bg-gray-700 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
+              ? "bg-gray300 text-gray500 py-3 px-4 rounded flex items-center space-x-2"
+              : "text-gray300 hover:bg-gray500 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
           }
         >
           <FaClipboardList />
@@ -66,8 +66,8 @@ const AdminSidebar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "bg-gray-700 text-white py-3 px-4 rounded flex items-center space-x-2"
-              : "text-gray-300 hover:bg-gray-700 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
+              ? "bg-gray300 text-gray500 py-3 px-4 rounded flex items-center space-x-2"
+              : "text-gray300 hover:bg-gray500 hover:text-white py-3 px-4 rounded flex items-center space-x-2"
           }
         >
           <FaStore />
@@ -77,7 +77,7 @@ const AdminSidebar = () => {
       <div className="mt-6">
         <button
           onClick={handleLogout}
-          className="text-white bg-gradient-to-r cursor-pointer w-full from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+          className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white font-semibold cursor-pointer w-full"
         >
           <span className="flex items-center justify-center gap-3">
             <FaSignOutAlt />

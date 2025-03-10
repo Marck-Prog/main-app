@@ -25,7 +25,7 @@ const GenderCollectionSection = () => {
             >
               <Link
                 to="/collections/all?category=Top Wear"
-                className="absolute bottom-7.5 sm:right-11 max-sm:bottom-9 z-20 bg-white text-black px-6 py-2 mr-4.5 hover:bg-gray500 hover:text-white duration-300"
+                className="absolute bottom-7.5 sm:right-11 max-sm:bottom-9 z-20 bg-white text-gray900 px-6 py-2 mr-4.5 hover:bg-gray500 hover:text-white duration-300"
               >
                 {translations.new_arrivals}
               </Link>
@@ -38,7 +38,7 @@ const GenderCollectionSection = () => {
             >
               <Link
                 to="/collections/all?gender=Women"
-                className="absolute bottom-7.5 z-20 bg-white text-black px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
+                className="absolute bottom-7.5 z-20 bg-white text-gray900 px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
               >
                 {translations.women_collection}
               </Link>
@@ -51,7 +51,7 @@ const GenderCollectionSection = () => {
             >
               <Link
                 to="/collections/all?gender=Men"
-                className="absolute bottom-7.5 z-20 bg-white text-black px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
+                className="absolute bottom-7.5 z-20 bg-white text-gray900 px-6 py-2 hover:bg-gray500 hover:text-white duration-300 max-sm:bottom-9"
               >
                 {translations.men_collection}
               </Link>

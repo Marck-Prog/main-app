@@ -97,7 +97,7 @@ const EditProductPage = () => {
             name="name"
             value={productData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 
@@ -108,7 +108,7 @@ const EditProductPage = () => {
             name="description"
             value={productData.description}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
             rows={4}
             required
           />
@@ -122,7 +122,7 @@ const EditProductPage = () => {
             name="price"
             value={productData.price}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 
@@ -134,7 +134,7 @@ const EditProductPage = () => {
             name="countInStock"
             value={productData.countInStock}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 
@@ -146,7 +146,7 @@ const EditProductPage = () => {
             name="sku"
             value={productData.sku}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 
@@ -165,7 +165,7 @@ const EditProductPage = () => {
                 sizes: e.target.value.split(",").map((size) => size.trim()),
               })
             }
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 
@@ -184,7 +184,7 @@ const EditProductPage = () => {
                 colors: e.target.value.split(",").map((color) => color.trim()),
               })
             }
-            className="w-full border border-gray-300 rounded-md p-2"
+            className="w-full border border-gray300 rounded-md p-2"
           />
         </div>
 

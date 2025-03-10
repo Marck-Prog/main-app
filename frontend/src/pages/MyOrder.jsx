@@ -25,8 +25,8 @@ const MyOrder = () => {
       <h2 className="text-xl sm:text-2xl font-bold mb-6">My Orders</h2>
 
       <div className="relative shadow-md rounded-lg overflow-hidden bg-gray100">
-        <table className="min-w-full text-left text-gray-500">
-          <thead className="bg-gray-100 text-xs uppercase text-gray-700">
+        <table className="min-w-full text-left text-gray500">
+          <thead className="bg-gray100 text-xs uppercase text-gray500">
             <tr>
               <th className="py-2 px-4 sm:py-3">Image</th>
               <th className="py-2 px-4 sm:py-3">Order ID</th>
@@ -76,7 +76,7 @@ const MyOrder = () => {
                       className={`${
                         order.isPaid
                           ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          : "bg-red-100 text-red"
                       } px-2 py-1 rounded-full text-xs sm:text-sm font-medium`}
                     >
                       {order.isPaid ? "Paid" : "Pending"}

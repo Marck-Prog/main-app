@@ -131,9 +131,9 @@ const FilterSidebar = () => {
               value={category}
               onChange={handleFilterChange}
               checked={filters.category === category}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray300"
             />
-            <span className="text-gray-700">{category}</span>
+            <span className="text-gray500">{category}</span>
           </div>
         ))}
       </div>
@@ -149,9 +149,9 @@ const FilterSidebar = () => {
               value={gender}
               onChange={handleFilterChange}
               checked={filters.gender === gender}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray300"
             />
-            <span className="text-gray-700">{gender}</span>
+            <span className="text-gray500">{gender}</span>
           </div>
         ))}
       </div>
@@ -166,7 +166,7 @@ const FilterSidebar = () => {
               name="color"
               value={color}
               onClick={handleFilterChange}
-              className={`w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105 ${
+              className={`w-8 h-8 rounded-full border border-gray300 cursor-pointer transition hover:scale-105 ${
                 filters.color === color ? "ring-2 ring-blue-500" : ""
               }`}
               style={{ backgroundColor: color.toLowerCase() }}
@@ -186,9 +186,9 @@ const FilterSidebar = () => {
               value={size}
               onChange={handleFilterChange}
               checked={filters.size.includes(size)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray300"
             />
-            <span className="text-gray-700">{size}</span>
+            <span className="text-gray500">{size}</span>
           </div>
         ))}
       </div>
@@ -204,9 +204,9 @@ const FilterSidebar = () => {
               value={material}
               onChange={handleFilterChange}
               checked={filters.material.includes(material)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray300"
             />
-            <span className="text-gray-700">{material}</span>
+            <span className="text-gray500">{material}</span>
           </div>
         ))}
       </div>
@@ -222,9 +222,9 @@ const FilterSidebar = () => {
               value={brand}
               onChange={handleFilterChange}
               checked={filters.brand.includes(brand)}
-              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300"
+              className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray300"
             />
-            <span className="text-gray-700">{brand}</span>
+            <span className="text-gray500">{brand}</span>
           </div>
         ))}
       </div>
@@ -241,7 +241,7 @@ const FilterSidebar = () => {
           max={100}
           value={priceRange[1]}
           onChange={handlePriceChange}
-          className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer"
+          className="w-full h-2 bg-gray300 rounded-lg appearance-none cursor-pointer"
         />
         <div className="flex items-center justify-between">
           <span>₱ 0.00</span>

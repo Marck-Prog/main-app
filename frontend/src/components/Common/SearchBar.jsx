@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { HiMagnifyingGlass, HiMiniXMark } from "react-icons/hi2";
 import { IoIosSearch } from "react-icons/io";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Description,
   Dialog,
@@ -117,7 +117,12 @@ const SearchBar = () => {
                       </form>
                       <div className="border-t-2 border-gray300"></div>
                       <div className="flex justify-center mt-8 text-[20px] max-sm:text-[20px] max-sm:w-full">
-                        <TextButton value="View All" />
+                        <Link
+                          to="/collections/all"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <TextButton value="View All" />
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -11,10 +11,10 @@ const OrderConfirmationPage = () => {
   if (!checkout) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 text-2xl">No order found.</p>
+        <p className="text-gray500 text-2xl">No order found.</p>
         <button
           onClick={() => navigate("/")}
-          className="bg-black mt-10 text-white cursor-pointer px-6 py-3 rounded-lg text-md font-medium tracking-wide hover:bg-gray-800 transition-all"
+          className="bg-gray900 mt-10 text-white cursor-pointer px-6 py-3 rounded-lg text-md font-medium tracking-wide hover:bg-gray-800 transition-all"
         >
           Back to Home
         </button>
@@ -41,14 +41,14 @@ const OrderConfirmationPage = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 bg-white">
-      <h1 className="text-4xl font-bold text-center text-green-600 tracking-wide">
+      <h1 className="text-4xl font-bold text-center text-green tracking-wide">
         Order Confirmed 🎉
       </h1>
-      <p className="text-center text-gray-500 mt-2">
+      <p className="text-center text-gray500 mt-2">
         Thanks for shopping with us. Your order is on the way!
       </p>
 
-      <div className="mt-8 border border-gray-200 shadow-md p-6 rounded-xl">
+      <div className="mt-8 border border-gray200 shadow-md p-6 rounded-xl">
         {/* Order Details */}
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -56,14 +56,14 @@ const OrderConfirmationPage = () => {
               Order ID:{" "}
               <span className="text-gray-600">{checkout?.id || "N/A"}</span>
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray500">
               Ordered on:{" "}
               {checkout?.createdAt
                 ? new Date(checkout.createdAt).toLocaleDateString()
                 : "N/A"}
             </p>
           </div>
-          <p className="text-sm text-gray-700 font-medium">
+          <p className="text-sm text-gray500 font-medium">
             Estimated Delivery:{" "}
             <span className="text-green-600">
               {calculateEstimatedDelivery(checkout?.createdAt)}
@@ -72,7 +72,7 @@ const OrderConfirmationPage = () => {
         </div>
 
         {/* Ordered Items */}
-        <div className="divide-y divide-gray-200">
+        <div className="divide-y divide-gray200">
           {checkout?.checkoutItems?.map((item) => (
             <div
               key={item.productId}
@@ -87,7 +87,7 @@ const OrderConfirmationPage = () => {
                 <h4 className="text-md font-medium text-gray-800">
                   {item.name}
                 </h4>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray500">
                   {item.color} | {item.size}
                 </p>
               </div>
@@ -95,7 +95,7 @@ const OrderConfirmationPage = () => {
                 <p className="text-lg font-semibold text-gray-900">
                   ${item.price}
                 </p>
-                <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                <p className="text-sm text-gray500">Qty: {item.quantity}</p>
               </div>
             </div>
           ))}
@@ -106,7 +106,7 @@ const OrderConfirmationPage = () => {
           {/* Payment Section */}
           <div className="flex-1">
             <h4 className="text-lg font-semibold text-gray-800">Payment</h4>
-            <p className="text-gray-500 mt-1">PayPal</p>
+            <p className="text-gray500 mt-1">PayPal</p>
           </div>
 
           {/* Delivery Section */}
@@ -114,7 +114,7 @@ const OrderConfirmationPage = () => {
             <h4 className="text-lg font-semibold text-gray-800">
               Shipping Address
             </h4>
-            <p className="text-gray-500 mt-1">
+            <p className="text-gray500 mt-1">
               {checkout.shippingAddress.address},{" "}
               {checkout.shippingAddress.city},{" "}
               {checkout.shippingAddress.country}
@@ -126,7 +126,7 @@ const OrderConfirmationPage = () => {
         <div className="mt-8 text-center">
           <button
             onClick={() => navigate("/")}
-            className="bg-black text-white cursor-pointer px-6 py-3 rounded-lg text-sm font-medium tracking-wide hover:bg-gray-800 transition-all"
+            className="bg-gray900 text-white cursor-pointer px-6 py-3 rounded-lg text-sm font-medium tracking-wide hover:bg-gray-800 transition-all"
           >
             Continue Shopping
           </button>
