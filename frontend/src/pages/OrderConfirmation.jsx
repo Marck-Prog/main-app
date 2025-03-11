@@ -72,11 +72,11 @@ const OrderConfirmationPage = () => {
         </div>
 
         {/* Ordered Items */}
-        <div className="divide-y divide-gray200">
+        <div className="divide-y divide-gray300 border-b border-t border-gray300">
           {checkout?.checkoutItems?.map((item) => (
             <div
               key={item.productId}
-              className="flex items-center py-4 hover:bg-gray-50 transition-all duration-300 rounded-lg px-4"
+              className="flex items-center py-4 hover:bg-gray-50 transition-all duration-300 px-4"
             >
               <img
                 src={item.image}
@@ -93,7 +93,7 @@ const OrderConfirmationPage = () => {
               </div>
               <div className="text-right">
                 <p className="text-lg font-semibold text-gray-900">
-                  ${item.price}
+                  $ {item.price.toFixed(2)}
                 </p>
                 <p className="text-sm text-gray500">Qty: {item.quantity}</p>
               </div>
@@ -102,7 +102,7 @@ const OrderConfirmationPage = () => {
         </div>
 
         {/* Payment & Shipping Info */}
-        <div className="mt-8 flex justify-between gap-6">
+        <div className="mt-8 flex justify-between gap-6 ">
           {/* Payment Section */}
           <div className="flex-1">
             <h4 className="text-lg font-semibold text-gray-800">Payment</h4>

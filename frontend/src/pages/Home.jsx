@@ -54,7 +54,7 @@ const Home = () => {
 
       <div className="container mx-auto">
         <h2 className="text-3xl text-center font-bold mb-4">
-          Top Wears for Women
+          Trending Top Wears
         </h2>
         <ProductGrid products={products} loading={loading} error={error} />
       </div>

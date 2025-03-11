@@ -7,10 +7,9 @@ const NewArrivals = () => {
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(false);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-
   const [newArrivals, setNewArrivals] = useState([]);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const NewArrivals = () => {
         );
         setNewArrivals(response.data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching new arrivals:", error);
       }
     };
 
@@ -29,7 +28,7 @@ const NewArrivals = () => {
   }, []);
 
   const handleMouseDown = (e) => {
-    if (!scrollRef.current) return; // Prevent error
+    if (!scrollRef.current) return;
 
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
@@ -37,9 +36,10 @@ const NewArrivals = () => {
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || !scrollRef.current) return;
+
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = x - startX;
+    const walk = (x - startX) * 1; // Adjust sensitivity
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -48,69 +48,66 @@ const NewArrivals = () => {
   };
 
   const scroll = (direction) => {
+    if (!scrollRef.current) return;
+
     const scrollAmount = direction === "left" ? -300 : 300;
-    scrollRef.current.scrollBy({ left: scrollAmount, behaviour: "smooth" });
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+
+    setTimeout(updateScrollButtons, 300);
   };
 
-  // Update Scroll Buttons
   const updateScrollButtons = () => {
-    const container = scrollRef.current;
+    if (!scrollRef.current) return;
 
-    if (!container) return; // Prevent accessing properties of undefined
-
-    const leftScroll = container.scrollLeft;
-    const rightScrollable =
-      container.scrollWidth > leftScroll + container.clientWidth;
-
-    setCanScrollLeft(leftScroll > 0);
-    setCanScrollRight(rightScrollable);
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
   };
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (container) {
-      container.addEventListener("scroll", updateScrollButtons);
-      updateScrollButtons();
-    }
+    if (!container) return;
 
-    return () => {
-      if (container) {
-        container.removeEventListener("scroll", updateScrollButtons);
-      }
-    };
+    container.addEventListener("scroll", updateScrollButtons, {
+      passive: true,
+    });
+    updateScrollButtons();
+
+    return () => container.removeEventListener("scroll", updateScrollButtons);
   }, [newArrivals]);
 
   return (
     <section className="py-16 px-4 lg:px-0">
       <div className="container mx-auto text-center mb-10 relative">
         <h2 className="text-3xl font-bold mb-4">Explore New Arrivals</h2>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-lg text-gray500 mb-8">
           Discover the latest styles straight off the runway, freshly added to
           keep your wardrobe on the cutting edge of fashion.
         </p>
 
         {/* Scroll Buttons */}
-        <div className="absolute right-0 bottom-[-30px] flex space-x-2">
+        <div className="absolute right-0 bottom-[-30px] flex space-x-2 max-sm:bottom-[-50px]">
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`p-2 rounded border border-gray300 ${
+            className={`p-2 rounded-full border border-gray200 duration-300 ${
               canScrollLeft
-                ? "bg-white text-gray500 cursor-pointer"
-                : "bg-gray200 text-gray300 cursor-not-allowed"
-            } `}
+                ? "bg-white text-gray400 hover:bg-gray200 cursor-pointer"
+                : "bg-gray200 text-gray300 hover:bg-gray200 cursor-not-allowed"
+            }`}
           >
-            <FiChevronLeft className="text-2xl " />
+            <FiChevronLeft className="text-2xl" />
           </button>
           <button
             onClick={() => scroll("right")}
-            className={`p-2 rounded border border-gray300 ${
+            disabled={!canScrollRight}
+            className={`p-2 rounded-full border border-gray200 duration-300 ${
               canScrollRight
-                ? "bg-white text-gray500 cursor-pointer"
-                : "bg-gray200 text-gray300 cursor-not-allowed"
-            } `}
+                ? "bg-white text-gray400 hover:bg-gray200 cursor-pointer"
+                : "bg-gray200 text-gray300 hover:bg-gray100 cursor-not-allowed"
+            }`}
           >
-            <FiChevronRight className="text-2xl " />
+            <FiChevronRight className="text-2xl" />
           </button>
         </div>
       </div>
@@ -118,7 +115,7 @@ const NewArrivals = () => {
       {/* Scrollable Content */}
       <div
         ref={scrollRef}
-        className={`container mx-auto overflow-x-scroll flex space-x-6 relative ${
+        className={`container mx-auto overflow-x-scroll flex space-x-6 relative scrollbar-hide ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         onMouseDown={handleMouseDown}
@@ -129,7 +126,7 @@ const NewArrivals = () => {
         {newArrivals.map((product) => (
           <div
             key={product._id}
-            className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative"
+            className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative max-sm:mt-6"
           >
             <img
               src={product.images[0]?.url}

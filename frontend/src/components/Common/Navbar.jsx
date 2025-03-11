@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { HiOutlineUser } from "react-icons/hi2";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WhistlistIcon from "../../assets/icons/WhistlistIcon";
 import Menu from "../../pages/Menu";
 import CartDrawer from "../Layout/CartDrawer";
@@ -15,6 +15,7 @@ const Navbar = () => {
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [didMount, setDidMount] = useState(false);
   const cartItemCount =
@@ -126,7 +127,7 @@ const Navbar = () => {
                   {user && user.role === "admin" && (
                     <Link
                       to="/admin"
-                      className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white font-semibold"
+                      className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white"
                     >
                       ADMIN
                     </Link>
@@ -139,7 +140,7 @@ const Navbar = () => {
                     type="button"
                     className="relative cursor-pointer hidden sm:block"
                     aria-label="Wishlist"
-                    onClick={() => navigate("/wishlist")}
+                    onClick={() => navigate("#")}
                   >
                     <WhistlistIcon className="" />
                   </button>

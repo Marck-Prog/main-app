@@ -176,7 +176,7 @@ const Footer = () => {
           </span>
 
           {/* Copyright Section */}
-          <span className="text-center sm:text-left">
+          <span className="text-center sm:text-left max-sm:mt-2">
             &copy; {new Date().getFullYear()}. Juan Graphico. All Rights
             Reserved
           </span>

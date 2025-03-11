@@ -67,7 +67,7 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
         <div className="btnContainer mt-4 px-4 w-full flex flex-col">
           <div className="flex justify-between mb-2">
             <span>Subtotal</span>
-            <span>{cart.totalPrice?.toFixed(2)}</span>
+            <span>$ {cart.totalPrice?.toFixed(2)}</span>
           </div>
           {(cart && cart?.products?.length > 0 && (
             <>

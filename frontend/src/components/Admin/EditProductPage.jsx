@@ -191,7 +191,11 @@ const EditProductPage = () => {
         {/* Image Upload */}
         <div className="mb-6">
           <label className="block font-semibold mb-2">Upload Image</label>
-          <input type="file" onChange={handleImageUpload} />
+          <input
+            type="file"
+            className="bg-gray200 px-4 py-2 item-center rounded-md w-fit"
+            onChange={handleImageUpload}
+          />
           {uploading && <p>Uploading Image...</p>}
           <div className="flex gap-4 mt-4">
             {productData.images.map((image, index) => (
@@ -207,7 +211,7 @@ const EditProductPage = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors cursor-pointer"
+          className="w-full bg-green text-white py-2 rounded-md hover:bg-gray400 transition-colors cursor-pointer"
         >
           Update Product
         </button>

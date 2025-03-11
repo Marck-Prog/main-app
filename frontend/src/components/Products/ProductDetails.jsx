@@ -139,7 +139,7 @@ const ProductDetails = ({ productId }) => {
                   `$${selectedProduct.originalPrice}`}
               </p>
               <p className="text-xl text-gray500 mb-2">
-                ${selectedProduct.price}
+                $ {selectedProduct.price.toFixed(2)}
               </p>
 
               <p className="text-gray-600 mb-4">

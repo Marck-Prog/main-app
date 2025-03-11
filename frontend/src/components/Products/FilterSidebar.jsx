@@ -244,8 +244,8 @@ const FilterSidebar = () => {
           className="w-full h-2 bg-gray300 rounded-lg appearance-none cursor-pointer"
         />
         <div className="flex items-center justify-between">
-          <span>₱ 0.00</span>
-          <span>₱ {priceRange[1]}</span>
+          <span>$ 0.00</span>
+          <span>$ {priceRange[1]}</span>
         </div>
       </div>
     </div>

@@ -74,7 +74,7 @@ const TopNav = () => {
                 <MenuItem>
                   <a
                     href=""
-                    className="bg-gray100 text-gray500 text-center focus:outline-none "
+                    className="text-gray500 text-center focus:outline-none "
                   >
                     <p className="hover:bg-gray300 hover:text-white">English</p>
                     <p className="hover:bg-gray300 hover:text-white">Francis</p>
@@ -97,7 +97,7 @@ const TopNav = () => {
                 <MenuItem>
                   <a
                     href=""
-                    className="bg-gray100 text-gray500 text-center focus:outline-none"
+                    className="text-gray500 text-center focus:outline-none"
                   >
                     <p className="hover:bg-gray300 hover:text-white">USD</p>
                     <p className="hover:bg-gray300 hover:text-white">PHP</p>

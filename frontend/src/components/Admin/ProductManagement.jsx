@@ -49,18 +49,18 @@ const ProductManagement = () => {
                   <td className="p-4 font-medium text-gray-900 whitespace-nowrap">
                     {product.name}
                   </td>
-                  <td className="p-4">${product.price}</td>
+                  <td className="p-4">$ {product.price.toFixed(2)}</td>
                   <td className="p-4">{product.sku}</td>
                   <td className="p-4">
                     <Link
                       to={`/admin/products/${product._id}/edit`}
-                      className="bg-yellow-500 text-white px-4 py-[6px] rounded mr-2 hover:bg-yellow-600"
+                      className="bg-yellow text-white px-4 py-[6px] rounded mr-2 hover:bg-yellow-600"
                     >
                       Edit
                     </Link>
                     <button
                       onClick={() => handleDelete(product._id)}
-                      className="bgred cursor-pointer text-white px-2 py-1 rounded hover:bg-red"
+                      className="bg-red cursor-pointer text-white px-2 py-1 rounded hover:bg-red-600"
                     >
                       Delete
                     </button>

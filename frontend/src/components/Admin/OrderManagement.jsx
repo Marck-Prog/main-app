@@ -53,7 +53,7 @@ const OrderManagement = () => {
                     #{order._id}
                   </td>
                   <td className="p-4">{order.user.name}</td>
-                  <td className="p-4">{order.totalPrice.toFixed(2)}</td>
+                  <td className="p-4">$ {order.totalPrice.toFixed(2)}</td>
                   <td className="p-4">
                     <select
                       value={order.status}
@@ -71,7 +71,7 @@ const OrderManagement = () => {
                   <td className="p-4">
                     <button
                       onClick={() => handleStatusChange(order._id, "Delivered")}
-                      className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                      className="bg-green text-white px-4 py-2 rounded hover:bg-gray300 cursor-pointer"
                     >
                       Mark as Delivered
                     </button>

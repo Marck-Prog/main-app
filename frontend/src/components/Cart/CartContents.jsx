@@ -32,7 +32,10 @@ const CartContents = ({ cart, userId, guestId }) => {
   return (
     <div>
       {cart.products.map((product, index) => (
-        <div className="flex items-start justify-between py-4 px-4 border-b border-gray300">
+        <div
+          key={product.productId}
+          className="flex items-start justify-between py-4 px-4 border-b border-gray300"
+        >
           <div className="flex items-start">
             <img
               src={product.image}
@@ -95,7 +98,10 @@ const CartContents = ({ cart, userId, guestId }) => {
               <RiDeleteBin3Line className="h-6 w-6 mt-2 max-sm:mt-0 cursor-pointer hover:text-red duration-300" />
             </button>
             <p className="mt-6 max-sm:mt-14">
-              ${product.price * product.quantity.toLocaleString()}
+              {/* $ {product.price * product.quantity.toLocaleString()} */}$
+              {Number(
+                (product.price * product.quantity).toFixed(2)
+              ).toLocaleString(undefined, { minimumFractionDigits: 2 })}
             </p>
           </div>
         </div>

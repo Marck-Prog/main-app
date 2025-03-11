@@ -23,7 +23,7 @@ const ProductGrid = ({ products, loading, error }) => {
             </div>
             <h3 className="text-sm mb-2">{product.name}</h3>
             <p className="text-gray500 font-medium text-sm tracking-tighter">
-              PHP {product.price}
+              $ {product.price.toFixed(2)}
             </p>
           </div>
         </Link>

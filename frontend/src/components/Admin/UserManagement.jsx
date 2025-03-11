@@ -119,7 +119,7 @@ const UserManagement = () => {
           </div>
           <button
             type="submit"
-            className="bg-green-500 cursor-pointer text-white py-2 px-4 rounded hover:bg-green-600"
+            className="bg-green cursor-pointer text-white py-2 px-4 rounded hover:bg-green-600"
           >
             Add User
           </button>
@@ -156,7 +156,7 @@ const UserManagement = () => {
                 </td>
                 <td className="p-4">
                   <button
-                    className="bgred cursor-pointer text-white px-4 py-2 rounded hover:bg-red"
+                    className="bg-red800 cursor-pointer text-white px-4 py-2 rounded hover:bg-red"
                     onClick={() => handleDelete(user._id)}
                   >
                     Delete

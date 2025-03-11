@@ -33,7 +33,7 @@ const MyOrder = () => {
               <th className="py-2 px-4 sm:py-3">Created</th>
               <th className="py-2 px-4 sm:py-3">Shipping Address</th>
               <th className="py-2 px-4 sm:py-3">Items</th>
-              <th className="py-2 px-4 sm:py-3">Price</th>
+              <th className="py-4 px-10 sm:py-3">Price</th>
               <th className="py-2 px-4 sm:py-3">Status</th>
             </tr>
           </thead>
@@ -69,7 +69,7 @@ const MyOrder = () => {
                     {order.orderItems.length}
                   </td>
                   <td className="py-2 px-2 sm:py-4 sm:px-4">
-                    ${order.totalPrice}
+                    $ {order.totalPrice.toFixed(2)}
                   </td>
                   <td className="py-2 px-2 sm:py-4 sm:px-4">
                     <span
