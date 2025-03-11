@@ -2,23 +2,135 @@ import React from "react";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
 import { TbBrandMeta } from "react-icons/tb";
-import { FiPhoneCall } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiPhoneCall } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="app-max-width border-t border-gray300 py-12 ml-30 max-sm:ml-0">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
-        <div>
-          <h3 className="text-lg text-gray-800 mb-4">Newsletter</h3>
-          <p className="text-gray500 mb-4">
-            Be the first to hear about new products, exclusive events, and
-            online offers.
-          </p>
-          <p className="font-medium text-sm text-gray-600 mb-6">
-            Sign up and get 10% off your first order.
-          </p>
-          {/* Newsletter form */}
+    <>
+      <div className="border-t border-gray100 py-16">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col font-display md:flex-row justify-between">
+          {/* Shop links */}
+          <div>
+            <h3 className="text-gray-400 text-lg mb-3">Company</h3>
+            <div className="flex flex-col">
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                About Us
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Contact Us
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Store Location
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Careers
+              </a>
+            </div>
+          </div>
+
+          {/* Shop links */}
+          <div>
+            <h3 className="text-gray-400 text-lg mb-3">Store</h3>
+            <div className="flex flex-col">
+              <Link
+                href="/product-category/women"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Women's Top Wear
+              </Link>
+              <Link
+                href="/product-category/men"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Men's Top Wear
+              </Link>
+              <Link
+                href="/product-category/bags"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Accessories
+              </Link>
+              <Link
+                href="/product-category/bags"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Threads
+              </Link>
+            </div>
+          </div>
+
+          {/* Support links */}
+          <div>
+            <h3 className="text-gray-400 text-lg mb-3">Help</h3>
+            <div className="flex flex-col">
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Order Tracking
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                FAQs
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="example"
+                className="py-2 text-gray400 hover:text-gray500"
+              >
+                Terms & Conditions
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-gray-400 text-lg mb-3">Keep In Touch</h3>
+            <div className="flex flex-col text-gray400 ">
+              <span className="py-2">
+                Barangay San Juan
+                <br />
+                Dasmariñas, Cavite
+                <br />
+                Philippines
+              </span>
+              <span className="py-2">+95 95 096 051</span>
+              <span className="py-2">
+                Open All Days
+                <br />
+                9:00 AM ~ 7:00 PM
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center pb-16">
+        <h4 className="text-3xl mb-4">Newsletter</h4>
+        <span className="px-6 text-center">
+          Be the first to know about new arrivals, sales & promos!
+        </span>
+        <p className="font-medium mt-1 text-sm text-gray-600 mb-4">
+          Sign up and get 10% off your first order.
+        </p>
+        <div className="px-6 flex w-full sm:w-auto flex-col sm:flex-row">
           <form className="flex">
             <input
               type="email"
@@ -34,105 +146,43 @@ const Footer = () => {
             </button>
           </form>
         </div>
-
-        {/* Shop links */}
-        <div>
-          <h3 className="text-lg text-gray-800 mb-4">Shop</h3>
-          <ul className="space-y-2 text-gray-600">
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Men's Top Wear
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Women's Top Wear
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Men's Bottom Wear
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Women's Bottom Wear
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Support links */}
-        <div>
-          <h3 className="text-lg text-gray-800 mb-4">Shop</h3>
-          <ul className="space-y-2 text-gray-600">
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                FAQs
-              </Link>
-            </li>
-            <li>
-              <Link to="#" className="hover:text-gray500 transition-colors">
-                Features
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Follow us */}
-        <div>
-          <h3 className="text-lg text-gray-800 mb-4">Follow Us</h3>
-          <div className="flex items-center space-x-4 mb-6">
+      </div>
+      <div className="border py-2 text-md border-gray200 text-gray500 max-sm:py-0">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center sm:flex-row sm:justify-between">
+          {/* Social Links Section */}
+          <span className="flex items-center mt-2 sm:mt-0">
+            <span className="hidden sm:block">Follow Us</span>
             <a
               href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray500"
+              aria-label="Facebook Page for Haru Fashion"
+              className="ml-4 hover:text-gray400 duration-300"
             >
               <TbBrandMeta />
             </a>
             <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray500"
+              href="https://www.instagram.com"
+              aria-label="Instagram Account for Haru Fashion"
+              className="ml-4 hover:text-gray400 duration-300"
             >
               <IoLogoInstagram />
             </a>
             <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray500"
+              href="https://www.twitter.com"
+              aria-label="Twitter Account for Haru Fashion"
+              className="ml-4 hover:text-gray400 duration-300"
             >
               <RiTwitterXFill />
             </a>
-          </div>
-          <p className="text-gray500">Call Us</p>
-          <p>
-            <FiPhoneCall className="inline-block mr-2 my-2" />
-            0123-456-789
-          </p>
+          </span>
+
+          {/* Copyright Section */}
+          <span className="text-center sm:text-left">
+            &copy; {new Date().getFullYear()}. Juan Graphico. All Rights
+            Reserved
+          </span>
         </div>
       </div>
-
-      {/* Footer Bottom */}
-      <div className="container mx-auto mt-12 px-4 lg:px-0 border-t border-gray300 pt-6">
-        <p className="text-gray500 text-sm tracking-tighter text-center">
-          All Rights Reserved. Juan Graphico &copy; {new Date().getFullYear()}
-        </p>
-      </div>
-    </footer>
+    </>
   );
 };
 
