@@ -72,10 +72,10 @@ const Navbar = () => {
         <div
           className={`${
             scrolled
-              ? "bg-white sticky top-0 shadow-md mb-10 z-50 max-sm:h-16"
+              ? "bg-white sticky top-0 shadow-md mb-10 z-50"
               : showCategorySheet
-              ? "bg-white duration-500 max-sm:h-16"
-              : "bg-white/20 backdrop-blur-none max-sm:h-16"
+              ? "bg-white duration-500"
+              : "bg-white/20 backdrop-blur-none"
           } w-full z-50 relative`}
         >
           <div className="app-max-width w-full z-50">
@@ -171,7 +171,7 @@ const Navbar = () => {
                     onClick={toggleCartDrawer}
                     className="relative hover:text-gray900"
                   >
-                    <HiOutlineShoppingBag className="h-6 w-6 text-gray500 cursor-pointer" />
+                    <HiOutlineShoppingBag className="h-6 w-6 text-gray500 cursor-pointer max-sm:ml-3" />
                     {cartItemCount > 0 && (
                       <span className="absolute -top-2.5 bg-gray500 cursor-pointer text-white text-xs rounded-full px-[9px] py-1">
                         {cartItemCount}
