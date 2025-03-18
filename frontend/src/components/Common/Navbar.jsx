@@ -3,21 +3,26 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { HiOutlineUser } from "react-icons/hi2";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { mainCategory } from "../../data/category/mainCategory";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import WhistlistIcon from "../../assets/icons/WhistlistIcon";
 import Menu from "../../pages/Menu";
 import CartDrawer from "../Layout/CartDrawer";
 import AppHeader from "./AppHeader";
 import SearchBar from "./SearchBar";
 import TopNav from "./TopNav";
+import CategorySheet from "./CategorySheet";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [didMount, setDidMount] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("men");
+  const [showCategorySheet, setShowCategorySheet] = useState(false);
+  const navigate = useNavigate();
   const cartItemCount =
     cart?.products?.reduce((total, product) => total + product.quantity, 0) ||
     0;
@@ -68,40 +73,40 @@ const Navbar = () => {
           className={`${
             scrolled
               ? "bg-white sticky top-0 shadow-md mb-10 z-50 max-sm:h-16"
-              : "bg-transparent"
-          } w-full z-50 h-20 relative`}
+              : showCategorySheet
+              ? "bg-white duration-500 max-sm:h-16"
+              : "bg-white/20 backdrop-blur-none max-sm:h-16"
+          } w-full z-50 relative`}
         >
           <div className="app-max-width w-full z-50">
-            <div className="flex justify-between px-14 max-sm:px-4">
+            <div className="flex justify-between lg:px-14 max-sm:px-3 max-lg:px-10">
               <nav className="container mx-auto flex items-center justify-between">
                 {/* Hamburger Menu and Mobile Nav */}
-                <div className="flex-1 lg:flex-0 lg:hidden">
+                <div className="flex lg:flex-0 lg:hidden py-4">
                   <Menu />
+                  <button
+                    type="button"
+                    className="relative cursor-pointer xs:ml-3 xs:mb-1"
+                    aria-label="Wishlist"
+                    onClick={() => navigate("#")}
+                  >
+                    <WhistlistIcon className="" />
+                  </button>
+                </div>
+                <div className="xs:ml-1">
+                  <Link to="/" className="">
+                    <img
+                      src="/logo.svg"
+                      alt="Logo"
+                      className="md:hidden"
+                      width={150}
+                      height={70}
+                    />
+                  </Link>
                 </div>
 
-                {/* Left Nav */}
-                <ul className="flex-0 lg:flex-1 flex ml-8 my-6 cursor-pointer">
-                  {/* Center - Navigation Links */}
-                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
-                    <Link to="/collections/all?gender=Men">Men</Link>
-                  </li>
-                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
-                    <Link to="/collections/all?gender=Women">Women</Link>
-                  </li>
-                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
-                    <Link to="/collections/all?category=Top Wear">
-                      Accessories
-                    </Link>
-                  </li>
-                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray500">
-                    <Link to="/collections/all?category=Bottom Wear">
-                      Threads
-                    </Link>
-                  </li>
-                </ul>
-
                 {/* Juan Logo */}
-                <div className="flex-auto flex justify-center items-center hidden sm:flex">
+                <div className="flex-auto flex justify-center items-center hidden sm:flex md:max-xl:ml-24">
                   <div className="w-86 h-auto">
                     <div>
                       <Link to="/">
@@ -117,28 +122,45 @@ const Navbar = () => {
                   </div>
                 </div>
 
+                {/* Left Nav */}
+                <ul className="flex-0 lg:flex-1 flex my-6 cursor-pointer">
+                  {/* Home Link */}
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray-400">
+                    <Link to="/">Home</Link>
+                  </li>
+                  {/* Center - Navigation Links */}
+                  {mainCategory.map((item) => (
+                    <li
+                      key={item.categoryId}
+                      onMouseEnter={() => {
+                        setShowCategorySheet(true);
+                        setSelectedCategory(item.categoryId);
+                      }}
+                      onMouseLeave={() => {
+                        // setShowCategorySheet(false);
+                      }}
+                      className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray-400 group"
+                    >
+                      <Link to={item.link}>{item.name}</Link>
+                      <ArrowDropUpIcon className="transition-transform duration-1000 ease-in-out transform rotate-180 group-hover:rotate-0 inline-block" />
+                    </li>
+                  ))}
+                </ul>
+
                 {/* Right Nav */}
                 <div className="flex lg:gap-10 items-center">
                   {/* Search */}
-                  <div className="mr-4 max-sm:mt-2">
+                  <div className="md:max-xl:mr-6">
                     <SearchBar />
                   </div>
 
-                  {user && user.role === "admin" && (
-                    <Link
-                      to="/admin"
-                      className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white"
-                    >
-                      ADMIN
-                    </Link>
-                  )}
                   <Link to="/profile" className="hover:text-gray900">
-                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray500 hidden sm:block" />
+                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray900 hidden md:max-xl:hidden sm:block" />
                   </Link>
 
                   <button
                     type="button"
-                    className="relative cursor-pointer hidden sm:block"
+                    className="relative cursor-pointer hidden sm:block md:max-xl:hidden"
                     aria-label="Wishlist"
                     onClick={() => navigate("#")}
                   >
@@ -147,7 +169,7 @@ const Navbar = () => {
 
                   <button
                     onClick={toggleCartDrawer}
-                    className="relative hover:text-gray900 max-sm:mt-2"
+                    className="relative hover:text-gray900"
                   >
                     <HiOutlineShoppingBag className="h-6 w-6 text-gray500 cursor-pointer" />
                     {cartItemCount > 0 && (
@@ -164,6 +186,16 @@ const Navbar = () => {
             drawerOpen={drawerOpen}
             toggleCartDrawer={toggleCartDrawer}
           />
+
+          {showCategorySheet && (
+            <div
+              onMouseEnter={() => setShowCategorySheet(true)}
+              onMouseLeave={() => setShowCategorySheet(false)}
+              className="categorySheet absolute top-[4.41rem] left-0 right-0"
+            >
+              <CategorySheet selectedCategory={selectedCategory} />
+            </div>
+          )}
         </div>
       </div>
     </>

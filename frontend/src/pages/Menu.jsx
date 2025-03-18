@@ -6,7 +6,7 @@ import {
   Transition,
   TransitionChild,
 } from "@headlessui/react";
-import { HiBars3BottomRight } from "react-icons/hi2";
+import { IoMdMenu } from "react-icons/io";
 import { IoIosArrowDown, IoLogoInstagram } from "react-icons/io";
 import {
   RiFacebookBoxFill,
@@ -37,22 +37,14 @@ const Menu = () => {
 
   return (
     <>
-      <div className="relative flex justify-between sm:justify-start items-center w-full max-sm:mt-3">
+      <div className="relative flex justify-between sm:justify-start items-center w-full">
         <button
           type="button"
           onClick={openModal}
           className="focus:outline-none"
         >
-          <HiBars3BottomRight className="h-7 w-7 mb-1 text-gray500 cursor-pointer" />
+          <IoMdMenu className="h-7 w-7 mb-1 text-gray500 cursor-pointer" />
         </button>
-        <div className="flex-grow text-center sm:text-left">
-          <Link
-            to="/"
-            className="inline-flex justify-center ml-6 w-full sm:w-auto"
-          >
-            <img src="/logo.svg" alt="Logo" width={150} height={70} />
-          </Link>
-        </div>
       </div>
 
       <Transition show={open} as={Fragment}>

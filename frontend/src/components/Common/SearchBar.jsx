@@ -101,7 +101,7 @@ const SearchBar = () => {
                         {isFetching ? (
                           <Loading />
                         ) : (
-                          <HiMagnifyingGlass extraClass="text-gray300 w-8 h-8" />
+                          <HiMagnifyingGlass size="24px" color="gray" />
                         )}
                         <input
                           type="search"
@@ -116,7 +116,7 @@ const SearchBar = () => {
                         />
                       </form>
                       <div className="border-t-2 border-gray300"></div>
-                      <div className="flex justify-center mt-8 text-[20px] max-sm:text-[20px] max-sm:w-full">
+                      <div className="flex justify-center mt-8 text-[20px] max-sm:text-[20px] max-sm:w-full ">
                         <Link
                           to="/collections/all"
                           onClick={() => setIsOpen(false)}

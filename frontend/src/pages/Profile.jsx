@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import MyOrder from "./MyOrder";
 import { useEffect } from "react";
@@ -28,9 +28,21 @@ const Profile = () => {
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
           {/* Left Section */}
           <div className="w-full md:w-1/3 lg:w-1/4 shadow-md rounded-lg p-6 bg-gray100">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4">
-              {user?.name}
-            </h1>
+            <div className="flex gap-8 py-2">
+              <h1 className="text-2xl md:text-3xl font-bold mb-4">
+                {user?.name}
+              </h1>
+              <div className="mt-2">
+                {user && user.role === "admin" && (
+                  <Link
+                    to="/admin"
+                    className="bg-gradient-to-br from-green-500 to-blue-600 hover:bg-gradient-to-bl transition-all duration-300 px-4 py-2 rounded-sm text-white"
+                  >
+                    ADMIN
+                  </Link>
+                )}
+              </div>
+            </div>
             <p className="text-lg text-gray600 mb-4">{user?.email}</p>
             <button
               onClick={handleLogout}

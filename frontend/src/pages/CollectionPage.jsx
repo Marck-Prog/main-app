@@ -43,7 +43,7 @@ const CollectionPage = () => {
   }, []); // Added empty dependency array
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row border-t border-gray200">
       {/* Mobile Filter button */}
       <button
         onClick={toggleSidebar}

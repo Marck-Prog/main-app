@@ -1,0 +1,173 @@
+export const menLevelThree = [
+  {
+    name: "T-Shirts",
+    categoryId: "men_t_shirts",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Casual Shirts",
+    categoryId: "men_casual_shirts",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Formal Shirts",
+    categoryId: "men_formal_shirts",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Sweatshirts",
+    categoryId: "men_sweatshirts",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Sweaters",
+    categoryId: "men_sweaters",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Classic Tees",
+    categoryId: "men_tees",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Oversized Tees",
+    categoryId: "oversized_tees",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Wash Tees",
+    categoryId: "wash_tees",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+  {
+    name: "Tanks",
+    categoryId: "tanks",
+    parentCategoryName: "Topwear",
+    parentCategoryId: "men_topwear",
+  },
+
+  {
+    name: "Jeans",
+    categoryId: "men_jeans",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Trousers",
+    categoryId: "men_trousers",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Joggers",
+    categoryId: "men_joggers",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Shorts",
+    categoryId: "men_shorts",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Track Pants",
+    categoryId: "men_track_pants",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Cargo Pants",
+    categoryId: "men_cargo_pants",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+  {
+    name: "Chinos",
+    categoryId: "men_chinos",
+    parentCategoryName: "Bottomwear",
+    parentCategoryId: "men_bottomwear",
+  },
+
+  {
+    name: "Boxers",
+    categoryId: "men_boxers",
+    parentCategoryName: "Innerwear And Sleepwear",
+    parentCategoryId: "men_innerwear_and_sleepwear",
+  },
+  {
+    name: "Trunks",
+    categoryId: "men_trunks",
+    parentCategoryName: "Innerwear And Sleepwear",
+    parentCategoryId: "men_innerwear_and_sleepwear",
+  },
+  {
+    name: "Vests",
+    categoryId: "men_vests",
+    parentCategoryName: "Innerwear And Sleepwear",
+    parentCategoryId: "men_innerwear_and_sleepwear",
+  },
+  {
+    name: "Lounge Pants",
+    categoryId: "men_lounge_pants",
+    parentCategoryName: "Innerwear And Sleepwear",
+    parentCategoryId: "men_innerwear_and_sleepwear",
+  },
+  {
+    name: "Night Suits",
+    categoryId: "men_night_suits",
+    parentCategoryName: "Innerwear And Sleepwear",
+    parentCategoryId: "men_innerwear_and_sleepwear",
+  },
+
+  {
+    name: "Blank T-Shirts",
+    categoryId: "men_blank_t_shirts",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Blank Hoodies",
+    categoryId: "men_blank_hoodies",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Blank Sweatshirts",
+    categoryId: "men_blank_sweatshirts",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Multipack T-Shirts",
+    categoryId: "men_multipack_t_shirts",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Multipack Boxers",
+    categoryId: "men_multipack_boxers",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Multipack Socks",
+    categoryId: "men_multipack_socks",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+  {
+    name: "Multipack Vests",
+    categoryId: "men_multipack_vests",
+    parentCategoryName: "Blanks & Packs",
+    parentCategoryId: "men_black&packs",
+  },
+];
