@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { mainCategory } from "../../data/category/mainCategory";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import WhistlistIcon from "../../assets/icons/WhistlistIcon";
 import Menu from "../../pages/Menu";
 import CartDrawer from "../Layout/CartDrawer";
@@ -125,7 +126,7 @@ const Navbar = () => {
                 {/* Left Nav */}
                 <ul className="flex-0 lg:flex-1 flex my-6 cursor-pointer">
                   {/* Home Link */}
-                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray-400">
+                  <li className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray400">
                     <Link to="/">Home</Link>
                   </li>
                   {/* Center - Navigation Links */}
@@ -139,10 +140,10 @@ const Navbar = () => {
                       onMouseLeave={() => {
                         // setShowCategorySheet(false);
                       }}
-                      className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray-400 group"
+                      className="font-display mr-12 hidden lg:block whitespace-nowrap hover:text-gray400 group"
                     >
                       <Link to={item.link}>{item.name}</Link>
-                      <ArrowDropUpIcon className="transition-transform duration-1000 ease-in-out transform rotate-180 group-hover:rotate-0 inline-block" />
+                      <KeyboardArrowDownIcon className="transition-transform duration-1000 ease-in-out transform rotate-0 group-hover:rotate-180 inline-block w-1 h-1 scale-70" />
                     </li>
                   ))}
                 </ul>
