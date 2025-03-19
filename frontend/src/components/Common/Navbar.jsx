@@ -80,20 +80,20 @@ const Navbar = () => {
         >
           <div className="app-max-width w-full z-50">
             <div className="flex justify-between lg:px-14 max-sm:px-3 max-lg:px-10">
-              <nav className="container mx-auto flex items-center justify-between">
+              <nav className="flex w-full items-center justify-between">
                 {/* Hamburger Menu and Mobile Nav */}
                 <div className="flex lg:flex-0 lg:hidden py-4">
                   <Menu />
                   <button
                     type="button"
-                    className="relative cursor-pointer xs:ml-3 xs:mb-1"
+                    className="relative cursor-pointer xs:ml-4 xs:mb-1"
                     aria-label="Wishlist"
                     onClick={() => navigate("#")}
                   >
                     <WhistlistIcon className="" />
                   </button>
                 </div>
-                <div className="xs:ml-1">
+                <div className="xs:ml-3 md:max-xl:ml-10">
                   <Link to="/" className="">
                     <img
                       src="/logo.svg"
@@ -155,7 +155,7 @@ const Navbar = () => {
                   </div>
 
                   <Link to="/profile" className="hover:text-gray900">
-                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 text-gray900 hidden md:max-xl:hidden sm:block" />
+                    <HiOutlineUser className="flex items-center gap-2 h-6 w-6 md:max-xl:mr-6 text-gray900 sm:block  xs:max-md:hidden" />
                   </Link>
 
                   <button
